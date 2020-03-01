@@ -111,131 +111,6 @@ class Header extends Component {
   render() {
     const image_url = "https://admin.urbandmusic.com/storage/";
     const menue = this.props.menues;
-    let menuItems = [];
-    let Submenu1Items = [];
-    let Submenu2Items = [];
-    for (var i = 0; i < menue.length; i++) {
-      if (menue[i].id === 10) {
-        menuItems.push(
-          <li key={menue[i].id}>
-            <NavLink
-              to="/index"
-              activeClassName="selected"
-              className="in-array"
-            >
-              {menue[i].title}
-            </NavLink>
-          </li>
-        );
-      } else if (menue[i].id === 16) {
-        menuItems.push(
-          <li key={menue[i].id}>
-            <NavLink
-              to="/who-we-are"
-              activeClassName="selected"
-              className="in-array"
-            >
-              {menue[i].title}
-            </NavLink>
-          </li>
-        );
-      } else if (
-        menue[i].id === 11 ||
-        menue[i].id === 12 ||
-        menue[i].id === 13
-      ) {
-        if (menue[i].id === 12) {
-          Submenu1Items.push(
-            <li key={menue[i].id}>
-              <Link to="/artist">{menue[i].title}</Link>
-            </li>
-          );
-        } else if (menue[i].id === 13) {
-          Submenu1Items.push(
-            <li key={menue[i].id}>
-              <Link to="/clients">{menue[i].title}</Link>
-            </li>
-          );
-        } else if (menue[i].id === 11) {
-          menuItems.push(
-            <li className="menu-item-has-children in-array" key={menue[i].id}>
-              {menue[i].title}
-              <ul key={menue[i].id + "1"} className="sub-menu">
-                {Submenu1Items}
-              </ul>
-            </li>
-          );
-        }
-      } else if (menue[i].id === 14) {
-        menuItems.push(
-          <li key={menue[i].id}>
-            <NavLink
-              to="/radio"
-              activeClassName="selected"
-              className="in-array"
-            >
-              {menue[i].title}
-            </NavLink>
-          </li>
-        );
-      } else if (menue[i].id === 18) {
-        menuItems.push(
-          <li key={menue[i].id}>
-            <NavLink
-              to="/gallery"
-              activeClassName="selected"
-              className="in-array"
-            >
-              {menue[i].title}
-            </NavLink>
-          </li>
-        );
-      } else if (
-        menue[i].id === 19 ||
-        menue[i].id === 21 ||
-        menue[i].id === 20 ||
-        menue[i].id === 22
-      ) {
-        if (menue[i].id === 21) {
-          Submenu2Items.push(
-            <li key={menue[i].id}>
-              <Link to="/coming-soon">{menue[i].title}</Link>
-            </li>
-          );
-        } else if (menue[i].id === 20) {
-          Submenu2Items.push(
-            <li key={menue[i].id}>
-              <Link to="/event-tickets">{menue[i].title}</Link>
-            </li>
-          );
-        } else if (menue[i].id === 22) {
-          Submenu2Items.push(
-            <li key={menue[i].id}>
-              <Link to="/store">{menue[i].title}</Link>
-            </li>
-          );
-        } else if (menue[i].id === 19) {
-          menuItems.push(
-            <li className="menu-item-has-children in-array" key={menue[i].id}>
-              {menue[i].title}
-              <ul className="sub-menu">{Submenu2Items}</ul>
-            </li>
-          );
-        }
-      } else if (menue[i].id === 23) {
-        menuItems.push(
-          <li key={menue[i].id}>
-            <NavLink
-              to="/contact"
-              activeClassName="selected"
-              className="in-array"
-            >
-              {menue[i].title}
-            </NavLink>
-          </li>
-        );
-      }
-    }
 
     return (
       <div className="AppHeader">
@@ -259,7 +134,65 @@ class Header extends Component {
               <div className="d-flex full-wrap nav-wrap">
                 <div className="nav">
                   <ul className="group" id="header-menu-magic-line">
-                    {menuItems}
+                    <li key="">
+                      <NavLink
+                        to="/index"
+                        activeClassName="selected"
+                        className="in-array"
+                      >
+                        Home
+                        </NavLink>
+                    </li>
+                    <li key="">
+                      <NavLink
+                        to="/who-we-are"
+                        activeClassName="selected"
+                        className="in-array"
+                      >
+                        About
+                        </NavLink>
+                    </li>
+                    <li className="menu-item-has-children in-array" key="">
+                      Store
+                        <ul className="sub-menu">
+                        <li key="">
+                          <Link to="/book">Book</Link>
+                        </li>
+                        <li key="">
+                          <Link to="/music">Music</Link>
+                        </li>
+                        <li key="">
+                          <Link to="/song">Songs</Link>
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="menu-item-has-children in-array" key="">
+                      Media
+                        <ul className="sub-menu">
+                        <li key="">
+                          <Link to="/photos">Photos</Link>
+                        </li>
+                        <li key="">
+                          <Link to="/videos">Videos</Link>
+                        </li>
+                        <li key="">
+                          <Link to="/musics">Musics</Link>
+                        </li>
+                        <li key="">
+                          <Link to="/songs">Songs</Link>
+                        </li>
+                      </ul>
+                    </li>
+                    <li key="">
+                      <NavLink
+                        to="/achievements"
+                        activeClassName="selected"
+                        className="in-array"
+                      >
+                        Achievements
+                        </NavLink>
+                    </li>
+
                   </ul>
                 </div>
 
@@ -274,8 +207,8 @@ class Header extends Component {
                         />
                       </Link>
                     ) : (
-                      ""
-                    )}
+                        ""
+                      )}
                   </li>
                   <li className="d-flex pos-relative">
                     {!this.props.isLoggedIn && !this.state.isToken ? (
@@ -287,8 +220,8 @@ class Header extends Component {
                         />
                       </Link>
                     ) : (
-                      ""
-                    )}
+                        ""
+                      )}
                     {this.props.isLoggedIn || this.state.isToken ? (
                       <Link onClick={this.ToggleBox}>
                         <span>Profile</span>
@@ -327,8 +260,8 @@ class Header extends Component {
                         </div>
                       </Link>
                     ) : (
-                      ""
-                    )}
+                        ""
+                      )}
                   </li>
                 </ul>
               </div>
