@@ -52,9 +52,10 @@
     "react-web-tabs": "^1.0.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "simple-react-lightbox": "^2.5.4"
+    "simple-react-lightbox": "^2.5.4",
+    "webpack": "^4.42.0"
   },
-  "homepage": "https://eidalfaraj.urbandmusic.com/",
+  "homepage": "https://eidalfaraj.uaect.com/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
