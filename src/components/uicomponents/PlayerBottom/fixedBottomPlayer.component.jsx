@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { hot } from "react-hot-loader";
 import StopButton from "../../../assets/img/stopButton.png";
 import PlayButton from "../../../assets/img/urbandPlay.png";
-import PauseButton from "../../../assets/img/urbandPause.png";
+//import PauseButton from "../../../assets/img/urbandPause.png";
+import "./style.css";
 import ReactPlayer from "react-player";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVolumeUp } from "@fortawesome/free-solid-svg-icons";
@@ -183,15 +184,12 @@ class App extends Component {
       <div className="BottomPlayerTp1 ">
         <div className="BottomPlayerTp1Cnt header_player ">
           <div className="row d-flex align-items-center">
-            <div className="col-auto">
-              <div className="">
+              <div className="albumCover">
                 <img
-                  className="ArtistImgTp1"
                   src={this.props.ArtistImage}
                   alt="ArtistImgTp1"
                 />
               </div>
-            </div>
             <div className="col-auto d-none-mobile">
               <div className="">
                 <h4 className="track-name">{this.props.ArtistTittle}</h4>
@@ -200,12 +198,18 @@ class App extends Component {
             </div>
             <div className="col-auto">
               {playing ? (
-                <img
-                  className="PlayerIconTp1"
-                  onClick={this.handlePlayPause}
-                  src={PauseButton}
-                  alt=""
-                />
+                // <img
+                //   className="PlayerIconTp1"
+                //   onClick={this.handlePlayPause}
+                //   src={PauseButton}
+                //   alt=""
+                // />
+
+                <span
+                onClick={this.handlePlayPause}
+                >
+                pause
+                </span>
               ) : (
                 <img
                   className="PlayerIconTp1"
@@ -227,6 +231,7 @@ class App extends Component {
                   onMouseDown={this.handleSeekMouseDown}
                   onChange={this.handleSeekChange}
                   onMouseUp={this.handleSeekMouseUp}
+                  className="range"
                 />
 
                 <ReactPlayer

@@ -1,0 +1,59 @@
+.aboutImg img{
+      border-radius: 66px 66px 66px 66px;
+    transform: scale(1) perspective(2000px) rotateY(6deg) rotateX(5deg) rotate(4deg);
+    height: 349px;
+}
+.card-box{
+      position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.back-pattern{
+      margin-left: -30px !important;
+      margin-top: -39px;
+      position: absolute;
+      z-index: -1;
+      height: 460px;
+}
+.pageHead{
+color: #000000;
+font-size: 49px;
+margin-bottom: 30px;
+text-transform: uppercase;
+}
+.pageDesc {
+      color: #666666;
+      font-size: 18px;
+  }
+  .get-started {
+      background-image: url("./bg-halftone-black.png");
+      background-size: 1300px 700px;
+      background-repeat: repeat;
+      background-color: #e8e8ec;
+      display: flex;
+      align-items: center;
+      height: 325px;
+      justify-content: center;
+      margin: 5em 0;
+  }
+  .backStage{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+  }
+  .stage{
+      width: auto;
+      text-align: center;
+      /* margin: 0 2.5em; */
+  }
+  .stage h4{
+      font-size: 4.1em;
+      color: #f99a26;
+      font-weight: 400;
+  }
+  .stageCaption{
+      font-size: 1.1em;
+      color: #172337;
+      font-weight: 500;
+  }

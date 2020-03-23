@@ -153,7 +153,7 @@ class logIn extends Component {
   render() {
     return (
       <div>
-        <section className="header-padd">
+        <section className="sectionPaddding">
           <div className="container">
             <div className="row">
               <div className="col-md-5 col-sm-4 mx-auto hero-acct-wrap">

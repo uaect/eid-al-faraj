@@ -1,30 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { library } from "@fortawesome/fontawesome-svg-core";
+import "./style.css";
 import { connect } from "react-redux";
 import * as actionCreators from "../../../src/store/actions/";
-import {
-  faFacebookF,
-  faTwitter,
-  faSoundcloud,
-  faYoutube,
-  faLinkedin,
-  faInstagram,
-  faApple,
-  faVimeo
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-library.add(
-  faFacebookF,
-  faTwitter,
-  faSoundcloud,
-  faYoutube,
-  faLinkedin,
-  faInstagram,
-  faApple,
-  faVimeo
-);
 
 class Footer extends Component {
   constructor(props) {
@@ -109,93 +88,78 @@ class Footer extends Component {
   }
   render() {
     return (
-      <footer id="footer-3" className="AppFooter">
-        <div className="container">
-          <div className="d-flex justify-content-center row">
-            <div className="col-xl-10">
-              <div className="footer-three-bottom">
-                <div className="footer-three-left">
-                  <Link to="/">
-                    <img
-                      src={require("../../assets/img/logo_5_dark.png")}
-                      alt=""
-                      className="foot-logo"
-                    />
-                  </Link>
-                  <p>
-                    {this.state.description.description}
-                  </p>
-                </div>
-                <div className="footer-three-right">
-                  <ul className="footer-three-menu">
-                    <li>
-                      <Link to="/event-tickets">Event Tickets</Link>
-                    </li>
-                    <li>
-                      <Link to="/store">Merchandise</Link>
-                    </li>
-                    <li>
-                      <Link to="/radio">Radio</Link>
-                    </li>
-                    <li>
-                      <Link to="/contact">Contact</Link>
-                    </li>
-                  </ul>
-                  <div className="footer-social-three">
-                    <ul>
-                      {this.state.facebook ? (<li>
-                        <a href={this.state.facebook}>
-                          {" "}
-                          <FontAwesomeIcon icon={faFacebookF} />
-                        </a>
-                      </li>) : ""}
-
-                      {this.state.Youtube ? (<li>
-                        <a href={this.state.Youtube}>
-                          {" "}
-                          <FontAwesomeIcon icon={faYoutube} />
-                        </a>
-                      </li>) : ""}
-
-                      {this.state.LinkedIn ? (<li>
-                        <a href={this.state.LinkedIn}>
-                          {" "}
-                          <FontAwesomeIcon icon={faLinkedin} />
-
-                        </a>
-                      </li>) : ""}
-                      {this.state.Twitter ? (<li>
-                        <a href={this.state.Twitter}>
-                          {" "}
-                          <FontAwesomeIcon icon={faTwitter} />
-                        </a>
-                      </li>) : ""}
-                      {this.state.Instagram ? (<li>
-                        <a href={this.state.Instagram}>
-                          {" "}
-                          <FontAwesomeIcon icon={faInstagram} />
-                        </a>
-                      </li>) : ""}
-                      {this.state.Vimeo ? (<li>
-                        <a href={this.state.Vimeo}>
-                          {" "}
-                          <FontAwesomeIcon icon={faVimeo} />
-                        </a>
-                      </li>) : ""}
-                      {this.state.SoundCloud ? (<li>
-                        <a href={this.state.SoundCloud}>
-                          {" "}
-                          <FontAwesomeIcon icon={faSoundcloud} />
-                        </a>
-                      </li>) : ""}
-                    </ul>
-                  </div>
+      <div>
+      <footer>
+      <div className="footer-container">
+        <div className="footer-wrap">
+          <div className="logo"><Link to =""><img src = {require('../../assets/img/logo.png')}  alt="hero" /></Link></div>
+          <div className="footer-menu">
+            <div className="footer-sec-title">EXPLORE</div>
+            <ul>
+              <li><Link to ="">Home</Link></li>
+              <li><Link to ="">About</Link></li>
+              <li><Link to ="">Gallery</Link></li>
+              <li><Link to ="">Music</Link></li>
+              <li><Link to ="">Store</Link></li>
+              <li><Link to ="">Achievemnts</Link></li>
+            </ul>
+          </div>
+          <div className="news-letter">
+            <div className="footer-sec-title">NEVER MISS AN UPDATE ?</div>
+            <div className="letter-container">
+              <div className="input-group mb-3">
+                <input type="text" className="form-control subscribeForm" placeholder="Your Email"
+                  aria-label="Your Email"/>
+                <div className="input-group-append">
+                  <button className="btn send" type="button" id="button-addon2">Sign
+                  Up</button>
                 </div>
               </div>
             </div>
+            <div className="social-wrap">
+               <Link to ="">
+                <svg version="1.1" width="24px" height="24px"
+                  viewBox="0 0 430.117 430.117">
+                  <g fill="#fff">
+                    <path id="Twitter__x28_alt_x29_" d="M381.384,198.639c24.157-1.993,40.543-12.975,46.849-27.876
+                      c-8.714,5.353-35.764,11.189-50.703,5.631c-0.732-3.51-1.55-6.844-2.353-9.854c-11.383-41.798-50.357-75.472-91.194-71.404
+                      c3.304-1.334,6.655-2.576,9.996-3.691c4.495-1.61,30.868-5.901,26.715-15.21c-3.5-8.188-35.722,6.188-41.789,8.067
+                      c8.009-3.012,21.254-8.193,22.673-17.396c-12.27,1.683-24.315,7.484-33.622,15.919c3.36-3.617,5.909-8.025,6.45-12.769
+                      C241.68,90.963,222.563,133.113,207.092,174c-12.148-11.773-22.915-21.044-32.574-26.192
+                      c-27.097-14.531-59.496-29.692-110.355-48.572c-1.561,16.827,8.322,39.201,36.8,54.08c-6.17-0.826-17.453,1.017-26.477,3.178
+                      c3.675,19.277,15.677,35.159,48.169,42.839c-14.849,0.98-22.523,4.359-29.478,11.642c6.763,13.407,23.266,29.186,52.953,25.947
+                      c-33.006,14.226-13.458,40.571,13.399,36.642C113.713,320.887,41.479,317.409,0,277.828
+                      c108.299,147.572,343.716,87.274,378.799-54.866c26.285,0.224,41.737-9.105,51.318-19.39
+                      C414.973,206.142,393.023,203.486,381.384,198.639z" />
+                  </g>
+                </svg>
+            </Link>
+            <Link to ="">
+                <svg version="1.1" width="18px" height="19px"
+                  viewBox="0 0 430.113 430.114">
+                  <g fill="#fff">
+                    <path id="Facebook"
+                      d="M158.081,83.3c0,10.839,0,59.218,0,59.218h-43.385v72.412h43.385v215.183h89.122V214.936h59.805
+                      c0,0,5.601-34.721,8.316-72.685c-7.784,0-67.784,0-67.784,0s0-42.127,0-49.511c0-7.4,9.717-17.354,19.321-17.354
+                      c9.586,0,29.818,0,48.557,0c0-9.859,0-43.924,0-75.385c-25.016,0-53.476,0-66.021,0C155.878-0.004,158.081,72.48,158.081,83.3z" />
+                  </g>
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
-      </footer>
+        <div className="footer-bottom">
+          <div className="list">
+          <div>
+          <Link to ="">Terms & Conditions</Link>
+          <Link to ="">Privacy Policy</Link>
+          </div>
+           
+          </div> <span>© 2020 Eid Al Faraj. All rights reserved.</span>
+        </div>
+      </div>
+</footer>
+      </div>
     );
   }
 }

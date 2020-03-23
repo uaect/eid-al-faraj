@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import Carousel from "react-multi-carousel";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faPlay} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "react-multi-carousel/lib/styles.css";
 import { connect } from "react-redux";
 import * as actionCreators from "../../store/actions";
 import { Link } from "react-router-dom";
 
+library.add(faPlay);
 class multiCarouselHero extends Component {
   componentDidMount() {
     this.props.fetchPosts();
@@ -19,11 +23,11 @@ class multiCarouselHero extends Component {
       superLargeDesktop: {
         // the naming can be any, depends on you.
         breakpoint: { max: 4000, min: 3000 },
-        items: 5
+        items: 2
       },
       desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 5
+        items: 4
       },
       tablet: {
         breakpoint: { max: 1024, min: 464 },
@@ -36,34 +40,113 @@ class multiCarouselHero extends Component {
     };
     return (
       <section className="artist-lineup hero">
-        <div className="tim-container clearfix">
-          {posts && posts.length > 0 && (
-            <Carousel responsive={responsive} arrows={true}>
-              {posts.map(item => {
-                return (
-                  <Link
-                    to={{
-                      pathname: `/artist`
-                    }} key={item.id}
-                  >
-                  <div className="artist-single home-page" >
-                      <img
-                        src={image_url + "/" + item.image}
-                        className="ink-pattern"
-                        alt="Album"
-                      />
+        <Carousel responsive={responsive} arrows={true}>
+          <div className="videoList">
+            <Link
+              to={{
+                pathname: `/artist`
+              }}
+            >
+              <div className="artist-single home-page">
+                <img
+                  src={require("../../media/about/1.jpg")}
+                  className="ink-pattern"
+                  alt="Album"
+                />
 
-                      <div className="artist-single-content">
-                        <h6>{item.name}</h6>
-                        <p>{item.genre}</p>
-                      </div>
-                  </div>
-                  </Link>
-                );
-              })}
-            </Carousel>
-          )}
+                <div className="artist-single-content">
+                  <h6>Kina Kiss forever</h6>
+                  <p>live perform</p>
+                </div>
+                <span className="playBtn large alignMiddle"><FontAwesomeIcon icon={faPlay} /></span>
+              </div>
+            </Link>
+          </div>
+          <div className="videoList">
+          <Link
+            to={{
+              pathname: `/artist`
+            }}
+          >
+            <div className="artist-single home-page">
+              <img
+                src={require("../../media/about/2.jpg")}
+                className="ink-pattern"
+                alt="Album"
+              />
+
+              <div className="artist-single-content">
+                <h6>Kina Kiss forever</h6>
+                <p>live perform</p>
+              </div>
+              <span className="playBtn large alignMiddle"><FontAwesomeIcon icon={faPlay} /></span>
+            </div>
+          </Link>
+        </div>  
+        <div className="videoList">
+        <Link
+          to={{
+            pathname: `/artist`
+          }}
+        >
+          <div className="artist-single home-page">
+            <img
+              src={require("../../media/about/3.jpg")}
+              className="ink-pattern"
+              alt="Album"
+            />
+
+            <div className="artist-single-content">
+              <h6>Kina Kiss forever</h6>
+              <p>live perform</p>
+            </div>
+            <span className="playBtn large alignMiddle"><FontAwesomeIcon icon={faPlay} /></span>
+          </div>
+        </Link>
+      </div> 
+      <div className="videoList">
+      <Link
+        to={{
+          pathname: `/artist`
+        }}
+      >
+        <div className="artist-single home-page">
+          <img
+            src={require("../../media/about/4.jpg")}
+            className="ink-pattern"
+            alt="Album"
+          />
+
+          <div className="artist-single-content">
+            <h6>Kina Kiss forever</h6>
+            <p>live perform</p>
+          </div>
+          <span className="playBtn large alignMiddle"><FontAwesomeIcon icon={faPlay} /></span>
         </div>
+      </Link>
+    </div> 
+    <div className="videoList">
+    <Link
+      to={{
+        pathname: `/artist`
+      }}
+    >
+      <div className="artist-single home-page">
+        <img
+          src={require("../../media/about/5.jpg")}
+          className="ink-pattern"
+          alt="Album"
+        />
+
+        <div className="artist-single-content">
+          <h6>Kina Kiss forever</h6>
+          <p>live perform</p>
+        </div>
+        <span className="playBtn large alignMiddle"><FontAwesomeIcon icon={faPlay} /></span>
+      </div>
+    </Link>
+  </div>  
+        </Carousel>
       </section>
     );
   }
@@ -81,7 +164,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(multiCarouselHero);
+export default connect(mapStateToProps, mapDispatchToProps)(multiCarouselHero);

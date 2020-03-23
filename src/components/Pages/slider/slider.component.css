@@ -1,0 +1,32 @@
+.heroCarouselBox .slideInner___2mfX9 img{
+      width: 100%;
+}
+
+.controlLeft, .controlRight {
+      width: 41px;
+    height: 41px;
+    display: flex;
+    align-items: center;
+    transition: 0.5s 0s;
+    border: solid 2px #f99a26;
+    outline: none;
+    border-radius: 50%;
+    color: #fff;
+    background: transparent;
+    font-size: 21px;
+    justify-content: center;
+  }
+  .controlLeft:hover, .controlRight:hover {
+      background: #f99a26; 
+      color: #fff;
+  }
+  .buttonWrap{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      position: absolute;
+      padding: 0px 15px;
+  }

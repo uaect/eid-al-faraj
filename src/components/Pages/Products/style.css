@@ -1,0 +1,64 @@
+.listWrap{
+      width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 15px;
+    margin-top: 1.4em;
+}
+.listBox{
+      position: relative;
+      width: 100%;
+      background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 1px 1px 0 rgba(60,64,67,.08), 0 1px 3px 1px rgba(60,64,67,.16);
+    overflow: hidden;
+}
+.imageHolder{
+   overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 221px;
+    border-radius: 7px 7px 0 0;
+                
+}
+.imageHolder img {
+      min-width: 100%;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+}
+.tvs-block-artist{
+      display: flex;
+      align-items: center;
+      color: #333;
+      justify-content: space-between;
+      padding: 9px;
+      border-radius: 0px 0px 7px 7px;
+  }
+  .tvs-block-artist .name{
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+  } 
+  .name a{
+      color: #333;    
+  }
+  .genere{
+    color: #999;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 400; 
+  }
+  .small{
+      padding: 7px 9px !important;
+      font-size: 11px !important;
+  }
+  .heroButton{max-width: 133px !important;}
+.btnWrap{
+      display: flex;
+      justify-content: flex-end;
+      width:100%;
+      margin-top: 2em;
+}

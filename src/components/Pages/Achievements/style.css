@@ -1,0 +1,50 @@
+.aboutImg img{
+      border-radius: 66px 66px 66px 66px;
+    transform: scale(1) perspective(2000px) rotateY(6deg) rotateX(5deg) rotate(4deg);
+    height: 349px;
+}
+.card-box{
+      position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.back-pattern{
+      margin-left: -30px !important;
+      margin-top: -39px;
+      position: absolute;
+      z-index: -1;
+      height: 460px;
+}
+.pageHead{
+color: #000000;
+font-size: 49px;
+margin-bottom: 30px;
+text-transform: uppercase;
+}
+.pageDesc {
+      color: #666666;
+      font-size: 16px;
+  }
+.achievementsWrap ul li{
+    width: 100%;
+    margin-bottom: 2.5em;
+}  
+.achievementsWrap ul li figure{
+    width:274px;
+    height: 184px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.achievementsWrap ul{
+    margin-top: 3em;
+}
+.descriptionRight .head{
+    font-size: 1.3em;
+}
+.descriptionRight p{
+    color: #666666;
+    font-size: 16px;
+    width: 75%;
+    padding-bottom: 2em;
+    border-bottom: 1px solid #d2d2d2;
+}

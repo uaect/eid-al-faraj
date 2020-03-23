@@ -150,7 +150,7 @@ class register extends Component {
 
     return (
       <div>
-        <section className="header-padd">
+        <section className="sectionPaddding">
           <div className="container">
             <div className="row">
               <div className="col-md-5 mx-auto hero-acct-wrap">
